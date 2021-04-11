@@ -1,0 +1,35 @@
+.container-main
+{
+    margin: 5% 0% 5% 25%;
+    width:50%;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+.container-edit
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+body
+{
+    background-color: lightblue;
+}
+.button
+{
+    margin-top:1%;
+}
+table, th, td
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}

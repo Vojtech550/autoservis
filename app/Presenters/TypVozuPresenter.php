@@ -10,10 +10,11 @@ use Nette\Database\Context;
 use Nette\Application\UI\Form;
 use Contributte\FormsBootstrap\BootstrapForm;
 
-final class HomepagePresenter extends Nette\Application\UI\Presenter
+final class TypVozuPresenter extends Nette\Application\UI\Presenter
 {
 	private $main_model;
     //private Nette\Database\Explorer $database;
+
 	public function __construct(Main_model $main_model)
 	{
 		$this->main_model = $main_model;
@@ -39,9 +40,9 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 		JOIN zamestnanci ON opravy.id = zamestnanci.id
 		");
     } */
-	public function renderDefault(): void
+	public function renderTypVozu(): void
     {
-        $this->template->autoservis = $this->database->table('automobily');
+        $this->template->typvozu = $this->database->table('typ_vozu');
     }
 	public function injectContext(Context $database)
 	{
@@ -49,40 +50,31 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 	}
 	protected function createComponentPostForm(): Form
 	{
-
 		$form = new BootstrapForm;
 		$form->setHtmlAttribute('class', 'container-main');
-		
-	
-		$form->addText('registranci_znacka', 'SPZ:')
+
+	/*	$form->addText('id', 'ID')
+			->setHtmlAttribute('rows', '4')
+			->setHtmlAttribute('cols', '32')
+			->setRequired(); */
+
+		$form->addText('typ_vozu', 'typ_vozu')
+			->setHtmlAttribute('type', 'text')
 			->setRequired();
 
-		$form->addText('vyrobce', 'Výrobce:')
+		$form->addText('prevodovka', 'Převodovka:')
 			->setHtmlAttribute('type', 'text')
-			->setRequired();
-
-		$form->addText('rok_vyroby', 'Rok výroby:')
-			->setHtmlAttribute('type', 'number')
-			->setHtmlAttribute('placeholder', 'např. 2001')
-			->setRequired();
-		$form->addText('barva', 'Barva:')
-			->setHtmlAttribute('type', 'text')
-			->setRequired();
-		$form->addText('obsah_motoru', 'Obsah motoru:')
-			->setHtmlAttribute('type', 'text')
-			->setHtmlAttribute('placeholder', 'např. 2.2')
 			->setRequired();
 
 		$form->addSubmit('send', 'Proveď')
 			->setHtmlAttribute('class', 'button btn-block col-lg-12 col-md-12 col-sm-12')
 			->setHtmlAttribute('id', 'submit');
-		
-		$formId = $this->getParameter('formId');
-		if($formId){
-			$form->addSubmit('cancel', 'Zpět')
-			->setHtmlAttribute('class', 'button btn-danger col-lg-12 col-md-12 col-sm-12')
-			->setHtmlAttribute('a', 'default');
-		}
+        $formId = $this->getParameter('formId');
+        if($formId){
+            $form->addSubmit('cancel', 'Zpět')
+            ->setHtmlAttribute('class', 'button btn-danger col-lg-12 col-md-12 col-sm-12')
+            ->setHtmlAttribute('a', 'typvozu');
+        }
 
 		$form->onSuccess[] = [$this, 'PostFormSucceeded'];
 
@@ -97,15 +89,15 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
         $formId = $this->getParameter('formId');
 
         if ($formId) {
-            $form = $this->database->table('automobily')->get(["id" => $formId]);
+            $form = $this->database->table('typ_vozu')->get(["id" => $formId]);
             $form->update($values);
-            $this->redirect('default');
+            $this->redirect('typvozu');
         } else {
 
-            $forms = $this->database->table('automobily')->insert($values);
+            $forms = $this->database->table('typ_vozu')->insert($values);
 
 
-            $this->redirect('Majitele:majitele');
+            $this->redirect('Zamestnanci:zamestnanci');
         }
     }
 
@@ -114,26 +106,20 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 		if (!$this->getUser()->isLoggedIn()) {
 			$this->redirect('Sign:in');
 		}
-        $this->database->table('automobily')
+        $this->database->table('typ_vozu')
 		->where("id", $id)
 		->delete('form');
-        $this->redirect('default');
-		
+        $this->redirect('typvozu');
     }
     public function actionEdit(int $formId): void
     {
 		if (!$this->getUser()->isLoggedIn()) {
 			$this->redirect('Sign:in');
 		}
-        $form = $this->database->table('automobily')->get(["id" => $formId]);
+        $form = $this->database->table('typ_vozu')->get(["id" => $formId]);
         if (!$form) {
             $this->error('Příspěvek nebyl nalezen');
         }
         $this['postForm']->setDefaults($form->toArray());
-    }
-    public function pridat_checkbox(): void
-    {
-        $this->template->form = $this->main_model->insert_checkbox();
-        $this->redirect('default');
     }
 }

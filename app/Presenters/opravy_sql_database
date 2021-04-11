@@ -1,0 +1,20 @@
+<?php
+$mysqli = mysqli_connect("localhost","root","","autoservis");
+		$sql = "SELECT soucastky_id FROM soucastky JOIN opravy ON soucastky.id = opravy.id";
+		$label = "SELECT soucastka FROM soucastky JOIN opravy ON soucastky.id = opravy.id";
+		//$sqssl = mysqli_query($con, "SELECT soucastka, soucastky_id FROM soucastky JOIN opravy ON soucastky.id = opravy.id");
+		//$resultaa = mysqli_query($con,$sql);
+	/*	$list = array(
+			'$row[soucastka]', '$row[soucastky_id]'
+		); */
+		//$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		//$rows = $result -> fetch_array(MYSQLI_ASSOC);
+		$result = mysqli_query($mysqli, $sql);
+		//$result -> $mysqli -> query($sql);
+		$row = $result -> fetch_all(MYSQLI_ASSOC);
+		
+		$form->addSelect('soucastky_id', "Výběr:" , $row)
+			//->setHtmlAttribute('type', 'text')
+			//->setItems($row)
+			->setHtmlAttribute('class', 'form-select')
+			->setPrompt("Vyberte číslo náhradního dílu");
