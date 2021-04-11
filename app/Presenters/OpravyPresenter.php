@@ -47,7 +47,7 @@ final class OpravyPresenter extends Nette\Application\UI\Presenter
 			->setHtmlAttribute('type', 'text')
 			->setRequired();
 
-		$sql1 = "SELECT zamestnanec_id, jmeno  FROM opravy JOIN zamestnanci ON opravy.id = zamestnanci.id";
+		$sql1 = "SELECT zamestnanec_id, prijmeni  FROM opravy JOIN zamestnanci ON opravy.id = zamestnanci.id";
 		if ($result1 = mysqli_query($mysqli, $sql1)){
 			$list1 = array('Vyberte');
 			if($row1 = mysqli_num_rows($result1) > 0) {

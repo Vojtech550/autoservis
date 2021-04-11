@@ -35,7 +35,7 @@ return array (
     'App\\Presenters\\OpravyPresenter' => 
     array (
       0 => 'D:\\xampp\\htdocs\\www\\autoservis\\app\\Presenters\\OpravyPresenter.php',
-      1 => 1618158456,
+      1 => 1618164451,
     ),
     'App\\Presenters\\SignPresenter' => 
     array (
@@ -45,7 +45,7 @@ return array (
     'App\\Presenters\\SoucastkyPresenter' => 
     array (
       0 => 'D:\\xampp\\htdocs\\www\\autoservis\\app\\Presenters\\SoucastkyPresenter.php',
-      1 => 1618161341,
+      1 => 1618163177,
     ),
     'App\\Presenters\\TypVozuPresenter' => 
     array (
@@ -84,7 +84,7 @@ return array (
     'App\\Presenters\\MajiteleTemplate' => 3,
     'App\\Presenters\\HomepageDefaultTemplate' => 3,
     'App\\Presenters\\HomepageTemplate' => 3,
-    'App\\Presenters\\SignInTemplate' => 2,
+    'App\\Presenters\\SignInTemplate' => 3,
     'App\\Presenters\\SignTemplate' => 3,
     'App\\Presenters\\HomepageEditTemplate' => 2,
     'App\\Presenters\\ZamestnanciZamestnanciTemplate' => 3,
@@ -92,7 +92,7 @@ return array (
     'App\\Presenters\\TypVozuTypvozuTemplate' => 3,
     'App\\Presenters\\TypVozuTemplate' => 3,
     'App\\Presenters\\SoucastkyEditTemplate' => 3,
-    'App\\Presenters\\SignOutTemplate' => 1,
+    'App\\Presenters\\SignOutTemplate' => 3,
   ),
   2 => 
   array (

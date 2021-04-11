@@ -46,7 +46,7 @@ final class Template440bc6caf2 extends Latte\Runtime\Template
 		/* line 4 */ $_tmp = $this->global->uiControl->getComponent("postForm");
 		if ($_tmp instanceof Nette\Application\UI\Renderable) $_tmp->redrawControl(null, false);
 		$_tmp->render();
-		echo '            <div class="column">
+		echo '            <div class="overflow">
     <table class="table table-striped table-bordered">
 
         <thead>
