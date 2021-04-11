@@ -39,12 +39,12 @@ final class OpravyPresenter extends Nette\Application\UI\Presenter
 			->setHtmlAttribute('cols', '32')
 			->setRequired(); */
 
-		$form->addDateTime('datum', 'doba_opravy')
+		$form->addDateTime('datum', 'Začátek opravy (Datum)')
 			->setHtmlAttribute('type', 'text')
 			->setRequired();
 
-		$form->addText('doba_opravy', 'Doba opravy/dny')
-			->setHtmlAttribute('type', 'number')
+		$form->addDateTime('doba_opravy', 'Konec opravy (Doba opravy)')
+			->setHtmlAttribute('type', 'text')
 			->setRequired();
 
 		$sql1 = "SELECT zamestnanec_id, jmeno  FROM opravy JOIN zamestnanci ON opravy.id = zamestnanci.id";
@@ -52,7 +52,7 @@ final class OpravyPresenter extends Nette\Application\UI\Presenter
 			$list1 = array('Vyberte');
 			if($row1 = mysqli_num_rows($result1) > 0) {
 				while($row1 = mysqli_fetch_array($result1)){
-					$list1[] = $row1['jmeno'];
+					$list1[] = $row1['prijmeni'];
 				}	
 			}
 		}
@@ -70,7 +70,7 @@ final class OpravyPresenter extends Nette\Application\UI\Presenter
 			}
 		}
 		//print_r($list);
-		$form->addSelect('soucastky_id', "Výběr:" , $list2)
+		$form->addSelect('soucastky_id', "Součástky ID" , $list2)
 			//->setHtmlAttribute('type', 'text')
 			//->setItems($row)
 			->setHtmlAttribute('class', 'form-select')

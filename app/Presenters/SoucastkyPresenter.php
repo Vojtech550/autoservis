@@ -54,13 +54,14 @@ final class SoucastkyPresenter extends Nette\Application\UI\Presenter
 		$form = new BootstrapForm;
 		$form->setHtmlAttribute('class', 'container-main');
 		$mysqli = mysqli_connect("localhost","root","","autoservis");
+		$formId = $this->getParameter('formId');
 
-		$form->addText('id', 'id:')
+	/*	$form->addText('id', 'id:')
 			->setHtmlAttribute('rows', '4')
 			->setHtmlAttribute('cols', '32')
-			->setRequired();
+			->setRequired(); */
 
-		$sql1 = "SELECT * FROM automobily 
+		$sql1 = "SELECT * FROM automobily
         JOIN typ_vozu ON typ_vozu.id = automobily.id
         JOIN majitele ON majitele.id = automobily.id
         JOIN soucastky ON soucastky.id = automobily.id
@@ -146,8 +147,7 @@ final class SoucastkyPresenter extends Nette\Application\UI\Presenter
 		$form->addSubmit('send', 'Proveď')
 			->setHtmlAttribute('class', 'button btn-block col-lg-12 col-md-12 col-sm-12')
 			->setHtmlAttribute('id', 'submit');
-            
-        $formId = $this->getParameter('formId');
+
         if($formId){
             $form->addSubmit('cancel', 'Zpět')
             ->setHtmlAttribute('class', 'button btn-danger col-lg-12 col-md-12 col-sm-12')
