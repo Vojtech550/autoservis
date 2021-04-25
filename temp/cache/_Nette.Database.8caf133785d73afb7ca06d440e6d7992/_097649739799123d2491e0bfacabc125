@@ -1,1 +1,1 @@
-000068a:2:{s:4:"time";s:21:"0.16187900 1618161600";s:10:"serialized";b:1;}a:8:{s:2:"id";b:1;s:11:"typ_vozu_id";b:1;s:11:"majitele_id";b:1;s:18:"registranci_znacka";b:1;s:7:"vyrobce";b:1;s:10:"rok_vyroby";b:1;s:5:"barva";b:1;s:12:"obsah_motoru";b:1;}
+000068a:2:{s:4:"time";s:21:"0.10539600 1619292467";s:10:"serialized";b:1;}a:8:{s:2:"id";b:1;s:11:"typ_vozu_id";b:1;s:11:"majitele_id";b:1;s:18:"registranci_znacka";b:1;s:7:"vyrobce";b:1;s:10:"rok_vyroby";b:1;s:5:"barva";b:1;s:12:"obsah_motoru";b:1;}

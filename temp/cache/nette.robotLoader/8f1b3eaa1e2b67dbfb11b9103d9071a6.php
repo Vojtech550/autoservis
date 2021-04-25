@@ -25,7 +25,7 @@ return array (
     'App\\Presenters\\HomepagePresenter' => 
     array (
       0 => 'D:\\xampp\\htdocs\\www\\autoservis\\app\\Presenters\\HomepagePresenter.php',
-      1 => 1618137650,
+      1 => 1618227084,
     ),
     'App\\Presenters\\MajitelePresenter' => 
     array (
@@ -35,7 +35,7 @@ return array (
     'App\\Presenters\\OpravyPresenter' => 
     array (
       0 => 'D:\\xampp\\htdocs\\www\\autoservis\\app\\Presenters\\OpravyPresenter.php',
-      1 => 1618164451,
+      1 => 1618227054,
     ),
     'App\\Presenters\\SignPresenter' => 
     array (
@@ -69,30 +69,28 @@ return array (
     'Nette\\Application\\UI\\ITemplate' => 3,
     'Nette\\Application\\UI\\ITemplateFactory' => 3,
     'Nette\\Application\\IResponse' => 3,
-    'Nette\\Security\\IResource' => 3,
-    'Nette\\Security\\IRole' => 3,
-    'App\\Presenters\\OpravyOpravyTemplate' => 3,
-    'App\\Presenters\\OpravyTemplate' => 3,
+    'Nette\\Security\\IResource' => 1,
+    'Nette\\Security\\IRole' => 1,
+    'App\\Presenters\\HomepageDefaultTemplate' => 3,
+    'App\\Presenters\\HomepageTemplate' => 3,
     'Nette\\Localization\\Nette\\Localization\\ITranslator' => 3,
     'Nette\\Forms\\ISubmitterControl' => 3,
     'Nette\\Application\\UI\\ISignalReceiver' => 3,
-    'Nette\\Database\\IConventions' => 3,
-    'App\\Presenters\\OpravyEditTemplate' => 3,
-    'App\\Presenters\\SoucastkySoucastkyTemplate' => 3,
-    'App\\Presenters\\SoucastkyTemplate' => 3,
-    'App\\Presenters\\MajiteleMajiteleTemplate' => 3,
-    'App\\Presenters\\MajiteleTemplate' => 3,
-    'App\\Presenters\\HomepageDefaultTemplate' => 3,
-    'App\\Presenters\\HomepageTemplate' => 3,
     'App\\Presenters\\SignInTemplate' => 3,
     'App\\Presenters\\SignTemplate' => 3,
-    'App\\Presenters\\HomepageEditTemplate' => 2,
-    'App\\Presenters\\ZamestnanciZamestnanciTemplate' => 3,
-    'App\\Presenters\\ZamestnanciTemplate' => 3,
+    'Nette\\Database\\IConventions' => 3,
+    'App\\Presenters\\MajiteleMajiteleTemplate' => 3,
+    'App\\Presenters\\MajiteleTemplate' => 3,
+    'App\\Presenters\\SoucastkySoucastkyTemplate' => 3,
+    'App\\Presenters\\SoucastkyTemplate' => 3,
     'App\\Presenters\\TypVozuTypvozuTemplate' => 3,
     'App\\Presenters\\TypVozuTemplate' => 3,
-    'App\\Presenters\\SoucastkyEditTemplate' => 3,
-    'App\\Presenters\\SignOutTemplate' => 3,
+    'App\\Presenters\\ZamestnanciZamestnanciTemplate' => 2,
+    'App\\Presenters\\ZamestnanciTemplate' => 2,
+    'App\\Presenters\\OpravyOpravyTemplate' => 3,
+    'App\\Presenters\\OpravyTemplate' => 3,
+    'App\\Presenters\\OpravyEditTemplate' => 1,
+    'App\\Presenters\\SignOutTemplate' => 1,
   ),
   2 => 
   array (
